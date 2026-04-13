@@ -1,5 +1,8 @@
 # ATtiny programming from Raspberry Pi
 This repository instructs how to program an ATtiny85 from Raspberry Pi
+
+![RPi_ATtiny-board_Setup](images/RPi_ATtiny-board_setup.jpg)
+
 Hardware and wiring 
 
 GPIO pin|ATtiny pin|Comment|
