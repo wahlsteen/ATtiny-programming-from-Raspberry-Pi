@@ -14,7 +14,7 @@ GPIO pin|ATtiny pin|Comment|
 |23|7|SCLK (through 1K, Red wire)
 |25|4|GND (Brown wire)
 
-![Schematic AT tiny Programmer](images/Schematic_ATtiny85-programmer.png)
+![Schematic AT tiny Programmer](images/Schematic_ATtiny85-programmer.png) <img src="images/ATtiny_board.JPG" width="220">
 
 Activate SPI on the Raspberry Pi
 
