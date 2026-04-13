@@ -3,7 +3,7 @@ This repository instructs how to program an ATtiny85 from Raspberry Pi
 
 ![RPi_ATtiny-board_Setup](images/RPi_ATtiny-board_setup.jpg)
 
-Hardware and wiring 
+## 1 Hardware and wiring 
 
 GPIO pin|ATtiny pin|Comment|
 |-------|----------|-------|
@@ -16,23 +16,24 @@ GPIO pin|ATtiny pin|Comment|
 
 ![Schematic AT tiny Programmer](images/Schematic_ATtiny85-programmer.png) <img src="images/ATtiny_board.JPG" width="220">
 
-Activate SPI on the Raspberry Pi
+## 2 Activate SPI on the Raspberry Pi
 
 	sudo raspi-config
 
 Choose 
+
 	Interface Options → SPI → Enable 
 
 Restart
 
 	sudo reboot
 
-Install Tools
+## 3 Install Tools
 
 	sudo apt update
 	sudo apt install avrdude gcc-avr avr-libc make
 
-Test the Contact with ATtiny
+## 4 Test the Contact with ATtiny
 
 	sudo avrdude -c linuxspi -P /dev/spidev0.0:/dev/gpiochip0 -p t85 -B 100 -v
 
@@ -47,7 +48,7 @@ Healthy respond:
 	[...]
 	avrdude: AVR device initialized and ready to accept instructions avrdude: device signature = 0x1e930b (probably t85)
 
-Make a new file with code: 
+## 5 Make a new file with code: 
 
 	nano blink.c
 
@@ -96,3 +97,16 @@ You can check the readback:
 	sudo avrdude -c linuxspi -P /dev/spidev0.0:/dev/gpiochip0 -p t85 -B 50 -U flash:r:readback.hex:i
 	
 Empty file or most FF indicates failure 
+
+## Acknowledgements
+
+This instruction is inspired by
+https://www.instructables.com/Programming-the-ATtiny85-from-Raspberry-Pi/
+
+## References 
+
+ATtiny85 data sheet https://ww1.microchip.com/downloads/en/devicedoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf
+
+AVRDUDE https://github.com/avrdudes/avrdude/
+
+
