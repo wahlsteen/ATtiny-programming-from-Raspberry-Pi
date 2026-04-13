@@ -37,11 +37,13 @@ Test the Contact with ATtiny
 	sudo avrdude -c linuxspi -P /dev/spidev0.0:/dev/gpiochip0 -p t85 -B 100 -v
 
 change SPI speed: 
+
 	-B 10
 	-B 50
 	-B 100
 
 Healthy respond: 
+
 	[...]
 	avrdude: AVR device initialized and ready to accept instructions avrdude: device signature = 0x1e930b (probably t85)
 
